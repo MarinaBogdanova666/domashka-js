@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дз 5</title>
+</head>
+<body>
+    <script>
+    
+        "use strict";
+
+        //Просим пользователя ввести числа и оператора. 
+        let firstNumber = +prompt("Введите первое число.");
+        let secondNumber = +prompt("Введите второе число.");
+        let operation = prompt("Введите какую операцию хотите выполнить: сложить, вычесть, умножить, разделить.");
+
+        function mathOperation(firstNumber, secondNumber, operation) {
+            // Проверяем введеные числа на NaN.
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                return "Введены некорректные числа!";
+            }
+            switch (operation) {
+                case "сложить":
+                case "+":
+                    return firstNumber + secondNumber;   
+                    break;
+
+                case "вычесть":
+                case "-":
+                    return firstNumber - secondNumber;   
+                    break;
+
+                case "умножить":
+                case "*":
+                    return firstNumber * secondNumber;   
+                    break;
+
+                case "разделить":
+                case ":":
+                case "/":
+                    return firstNumber / secondNumber;   
+                    break;
+
+                default: 
+                return "Неверно введён оператор!"
+
+            }
+        }
+
+        // Выводим результат.
+        alert("Ваш результат: " + mathOperation(firstNumber, secondNumber, operation));
+
+    </script>
+</body>
+</html>

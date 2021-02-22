@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дз 4</title>
+</head>
+<body>
+    <script>
+    
+        "use strict";
+        // Просим пользователя ввести два числа.
+        let firstNumber = +prompt("Введите первое число.");
+        let secondNumber = +prompt("Введите второе число.");
+        
+        // Функция сложения.
+        function add(firstNumber,secondNumber) {
+           return firstNumber + secondNumber;
+        }
+
+        // Функция вычитания.
+        function subtract(firstNumber,secondNumber) {
+           return firstNumber - secondNumber;
+        }
+
+        // Функция деления.
+        function divide(firstNumber,secondNumber) {
+           return firstNumber / secondNumber;
+        }
+
+        // Функция умножения.
+        function multiply(firstNumber,secondNumber) {
+           return firstNumber * secondNumber;
+        }
+
+        if (isNaN(firstNumber) || isNaN(secondNumber)) {
+            alert("Введены некорректные числа!");
+        } else {
+            alert("Сумма ваших чисел равна: " + add(firstNumber,secondNumber));
+            alert("Разница ваших чисел равна: " + subtract(firstNumber,secondNumber));
+            alert("Частное ваших чисел равно: " + divide(firstNumber,secondNumber));
+            alert("Произведение ваших чисел равно: " +  multiply(firstNumber,secondNumber));
+        }
+       
+    </script>
+</body>
+</html>
