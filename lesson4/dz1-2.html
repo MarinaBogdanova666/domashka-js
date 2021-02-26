@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дз 1.2</title>
+</head>
+<body>
+    <script>
+    
+        "use strict";
+        
+        // задание выполненное на синтаксисе es5.
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(newText) {
+            this.text = newText;
+        };
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        };
+
+        let obj = new AttachedPost('King', 'hello', '12/12/12');
+        obj.makeTextHighlighted();
+        obj.edit('world');
+        console.log(obj);
+
+
+        // задание выполненное на синтаксисе es6.
+
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(newText) {
+                this.text = newText;
+            };
+        }
+
+        class AttachedPostES6 extends PostES6 {
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            };
+        }
+
+
+        let objES6 = new AttachedPostES6('Putin', 'ploti', '26/02/21');
+        objES6.makeTextHighlighted();
+        objES6.edit('nalogi');
+        console.log(objES6);
+    </script>
+</body>

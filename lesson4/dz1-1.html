@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дз 1.1</title>
+</head>
+<body>
+    <script>
+    
+        "use strict";
+        
+        // задание выполненное на синтаксисе es5.
+        function ProductES5(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        ProductES5.prototype.make25PercentDiscount = function() {
+            this.price *= 0.75;
+        };
+
+        let toyCar = new ProductES5("Игрушечная машинка", 100);
+        toyCar.make25PercentDiscount();
+        console.log(toyCar);
+
+
+        // задание выполненное на синтаксисе es6.
+
+        class ProductES6 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            };
+        }
+
+        let toyMoto = new ProductES6("Игрушечный мотоцикл", 200);
+        toyMoto.make25PercentDiscount();
+        console.log(toyMoto);
+
+    </script>
+</body>
