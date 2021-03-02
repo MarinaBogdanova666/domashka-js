@@ -9,13 +9,13 @@
     
     <ul>
         <li>
-            <button>Кнопка</button>
+            <button>Кнопка1</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button>Кнопка2</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button>Кнопка3</button>
         </li>
     </ul>
 
@@ -24,7 +24,10 @@
     объект события, передаваемый в функцию-обработчик клика. -->
 
     <script>
-        
+        let elem = document.querySelector("ul");
+        elem.onclick = function(event) {
+            console.log(event.target);
+        }
     </script>
 </body>
 </html>
