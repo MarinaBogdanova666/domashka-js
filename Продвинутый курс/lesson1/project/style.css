@@ -29,9 +29,6 @@ button:focus{
     
 }
 
-.invisible {
-    display: none;
-}
 .container-head {
     height: 100px;
     width: 1600px;
@@ -48,6 +45,7 @@ button:focus{
     padding-top: 25px;
     padding-left: 30px;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 .logo:hover {
     color: floralwhite;
@@ -61,9 +59,10 @@ button:focus{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     transition: all 0.3s ease-out;
-    margin-top: 25px;
+    margin-left: 50px;
     margin-right: 30px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .btn-cart:hover {
@@ -118,6 +117,7 @@ button:focus{
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.3s ease-out;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .product-item button:hover {
@@ -148,7 +148,7 @@ button:focus{
     background-color: rgba(0, 0, 0, 0);
     transition: all 0.2s ease-out;
     border-radius: 4px;
-    
+    cursor: pointer;
 }
 
 .del-btn:hover{
@@ -159,4 +159,48 @@ button:focus{
 .total {
     font-size: 20px;
     font-weight: bold;
+}
+.headerRight {
+    display: flex;
+    align-items: center;
+}
+.search {
+    display: flex;
+    align-items: center;
+    width: 160px;
+}
+
+.search input{
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    padding-left: 8px;
+    margin-right: 8px;
+    border: 2px solid royalblue;
+}
+.fa-search {
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.fa-search:hover{
+    color: royalblue;
+}
+
+.emptyCart {
+    color: white;
+    align-items: center;
+    margin-top: 8px;
+    margin-left: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px ;
+}
+
+.emptySearch {
+    color: rgba(144, 175, 214, 0.87);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px ;
 }
