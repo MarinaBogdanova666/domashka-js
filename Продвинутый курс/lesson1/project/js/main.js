@@ -4,11 +4,9 @@ let app = new Vue({
         api: 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json',
         allProducts: [],
         img: 'https://via.placeholder.com/150',
-        imgCart: 'https://via.placeholder.com/50',
+        filteredProducts: [],
         goods: [],
         showCart: false,
-        userSearch: "",
-        filteredProducts: [],
     },
     mounted: function(){
         this.getProducts();
@@ -25,11 +23,6 @@ let app = new Vue({
                     )
                     .catch(error => console.log(error))
         },
-
-        toggleCart(){
-            this.showCart = !this.showCart;
-        },
-
         addToCart(product){
             let elemGoods = this.goods.find(elem => elem.id_product == product.id_product);
             if (elemGoods) {
@@ -38,23 +31,12 @@ let app = new Vue({
                 this.goods.push(product)
             }
         },
-
-        removeFromCart(product){
-            if (product.quantity > 1) {
-                product.quantity--  
-            } else {
-                let elemIndex = this.goods.indexOf(product);
-                this.goods.splice(elemIndex, 1);
-            }
+        
+        toggleCart(){
+            this.showCart = !this.showCart;
         },
-        filterProducts(){
-            let regexp = new RegExp(this.userSearch, "i");
-            this.filteredProducts = this.allProducts.filter(elem => regexp.test(elem.product_name));
-            console.log(this.userSearch, this.filteredProducts);
-        }
     }
   })
-
 
 
 

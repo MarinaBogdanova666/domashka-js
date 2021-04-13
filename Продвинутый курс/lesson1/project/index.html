@@ -11,25 +11,10 @@
             <div class="container-head">
                 <a href="#" class="logo">LOGO</a>
                 <div class="headerRight">
-                    <div class="search">
-                        <input @input="filterProducts" v-model="userSearch"  type="text" placeholder="Поиск">
-                        <div @click="filterProducts">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
+                    <search></search>
                     <button @click="toggleCart" class="btn-cart" type="button">Корзина</button>
                 </div>
-                <div v-if="showCart" class="cart-block">
-                    <div v-if="!goods.length" class="emptyCart">В корзине пока пусто...</div>
-                    <div v-for="product in goods"  class="cart-item">
-                        <img :src="imgCart">
-                        <h3>{{product.product_name}}</h3>
-                        <p>{{product.price}}p/шт.</p>
-                        <p>{{product.quantity}} шт.</p>
-                        <p class="total">{{ product.price * product.quantity }}p</p>
-                        <button @click="removeFromCart(product)" class="del-btn">X</button>
-                    </div>
-                </div>
+                <cart :goods="goods" :show-cart="showCart"></cart>
             </div>
         </header>
         <main>
@@ -46,6 +31,8 @@
     </div>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/searchComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
